@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Paleta de marca Sylo (portada 1:1 desde la maqueta original) ---- */
+  --color-navy-950: #0a1830;
+  --color-navy-800: #1d3f6c;
+  --color-navy-700: #28517f;
+  --color-powder-300: #b0cfeb;
+  --color-powder-200: #d8e7f5;
+  --color-ivory-100: #f4f1e8;
+  --color-ivory-50: #faf8f3;
+  --color-ink-900: #101826;
+  --color-gold-400: #c9a876;
+  --color-gold-300: #dac095;
+  --color-stone-400: #8b93a7;
+  --color-stone-600: #5b6478;
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --ease-sylo: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --animate-marquee: marquee 28s linear infinite;
+}
+
+:root {
+  --nav-h: 78px;
+  --line-on-dark: rgba(244, 241, 232, 0.14);
+  --line-on-light: rgba(16, 24, 38, 0.12);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-navy-950);
+    color: var(--color-ivory-100);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+  ::selection {
+    background: var(--color-powder-300);
+    color: var(--color-navy-950);
+  }
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-navy-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-navy-700);
+    border-radius: 8px;
+    border: 3px solid var(--color-navy-950);
+  }
+  * {
+    scrollbar-color: var(--color-navy-700) var(--color-navy-950);
+    scrollbar-width: thin;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-powder-300);
+    outline-offset: 3px;
+  }
+  /* Activado por components/custom-cursor.tsx solo con mouse fino */
+  .has-cursor,
+  .has-cursor a,
+  .has-cursor button,
+  .has-cursor [data-cursor] {
+    cursor: none;
+  }
+}
+
+@layer utilities {
+  .wrap {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+  @media (max-width: 640px) {
+    .wrap {
+      padding-inline: 20px;
+    }
+  }
+
+  /* Panel de contenido que respeta reduced-motion sin depender de JS para el estado inicial */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-up {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Lenis: evita el scroll nativo mientras la librería controla el desplazamiento suave */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
