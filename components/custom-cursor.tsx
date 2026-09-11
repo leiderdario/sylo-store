@@ -23,11 +23,11 @@ const RING_LABEL: Record<CursorState, string> = {
 };
 
 const RING_STYLE: Record<CursorState, string> = {
-  default: "bg-transparent border-powder-300",
+  default: "bg-transparent border-bronze-400/80",
   view: "bg-ivory-100 border-ivory-100 text-navy-950",
   cart: "bg-gold-400 border-gold-400 text-navy-950",
-  link: "bg-white/12 border-powder-300",
-  explore: "bg-powder-300 border-powder-300 text-navy-950",
+  link: "bg-white/12 border-bronze-400/80",
+  explore: "bg-bronze-400 border-bronze-400 text-navy-950 font-bold",
 };
 
 /**

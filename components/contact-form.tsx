@@ -214,7 +214,7 @@ export function ContactForm() {
                       className={cn(
                         "group relative flex items-start gap-3.5 rounded-xl border p-4 text-left transition-all duration-300",
                         isSelected
-                          ? "border-gold-400 bg-navy-800/90 shadow-[0_4px_25px_rgba(201,168,118,0.18)]"
+                          ? "border-gold-400 bg-navy-800/90 shadow-[0_4px_25px_rgba(212,154,85,0.22)]"
                           : "border-white/10 bg-navy-900/50 hover:border-white/20 hover:bg-navy-900/80"
                       )}
                     >
@@ -222,8 +222,8 @@ export function ContactForm() {
                         className={cn(
                           "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors",
                           isSelected
-                            ? "bg-gold-400 text-navy-950 shadow-md"
-                            : "bg-navy-800 text-powder-300 group-hover:bg-navy-700"
+                            ? "bg-gradient-to-tr from-gold-400 to-gold-300 text-navy-950 shadow-md font-bold"
+                            : "bg-navy-800 text-bronze-300 group-hover:bg-navy-700"
                         )}
                       >
                         <Icon size={20} />
@@ -285,7 +285,7 @@ export function ContactForm() {
                           className={cn(
                             "flex flex-col rounded-lg border p-3 text-left transition-all",
                             selectedVolume === tier.label
-                              ? "border-powder-300 bg-powder-300/15 text-ivory-100 shadow-sm"
+                              ? "border-bronze-400 bg-bronze-400/15 text-ivory-100 shadow-sm"
                               : "border-white/10 bg-navy-950/60 text-stone-400 hover:border-white/20"
                           )}
                         >
@@ -337,7 +337,7 @@ export function ContactForm() {
                     </div>
                   </div>
 
-                  <div className="mt-5 flex items-center justify-between rounded-lg bg-navy-950/80 px-4 py-3 border border-white/5 text-[12px] text-powder-300">
+                  <div className="mt-5 flex items-center justify-between rounded-lg bg-navy-950/80 px-4 py-3 border border-white/5 text-[12px] text-bronze-300">
                     <div className="flex items-center gap-2">
                       <Zap size={14} className="text-gold-400" />
                       <span>{t("contact.turnaround")}</span>
@@ -430,7 +430,7 @@ export function ContactForm() {
                 <label className="mb-1.5 block text-[13px] font-medium text-stone-300">
                   {t("contact.guarantee_title")}
                 </label>
-                <div className="flex h-[52px] items-center gap-3 rounded-xl border border-white/10 bg-navy-900/30 px-4 text-[13px] text-powder-300">
+                <div className="flex h-[52px] items-center gap-3 rounded-xl border border-white/10 bg-navy-900/30 px-4 text-[13px] text-bronze-300">
                   <ShieldCheck size={18} className="text-emerald-400 shrink-0" />
                   <span>Atención prioritaria y confidencialidad de tus ASINs.</span>
                 </div>
@@ -470,7 +470,7 @@ export function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-gold-400 to-gold-300 px-9 py-4 font-serif text-[15px] font-bold text-navy-950 shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_35px_rgba(201,168,118,0.35)] active:scale-[0.98] disabled:opacity-60"
+                className="group relative flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-bronze-500 via-gold-400 to-gold-300 px-9 py-4 font-serif text-[15px] font-bold text-navy-950 shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_35px_rgba(219,110,57,0.35)] active:scale-[0.98] disabled:opacity-60"
               >
                 {isSubmitting ? (
                   <>

@@ -95,17 +95,17 @@ export function SplitExperience() {
       className="relative w-full overflow-hidden bg-navy-950 transition-colors duration-500"
     >
       {/* Barra de control superior / Tabs Switcher */}
-      <div className="sticky top-[var(--nav-h)] z-40 border-y border-white/10 bg-navy-950/85 px-4 py-3 backdrop-blur-md">
+      <div className="sticky top-[var(--nav-h)] z-40 border-y border-white/10 bg-navy-950/90 px-4 py-3 backdrop-blur-md">
         <div className="wrap flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-gold-400 animate-pulse" />
-            <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-powder-300">
+            <span className="h-2 w-2 rounded-full bg-bronze-400 shadow-[0_0_8px_rgba(219,110,57,0.8)] animate-pulse" />
+            <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-bronze-300">
               Interactive Division
             </span>
           </div>
 
           {/* Toggle pill interactivo */}
-          <div className="relative inline-flex items-center rounded-full bg-navy-800/90 p-1 border border-white/15 shadow-inner">
+          <div className="relative inline-flex items-center rounded-full bg-navy-900/90 p-1 border border-white/15 shadow-inner">
             <button
               onClick={() => switchPanel("prep")}
               className={cn(
@@ -120,7 +120,7 @@ export function SplitExperience() {
               {activePanel === "prep" && (
                 <motion.div
                   layoutId="active-pill-bg"
-                  className="absolute inset-0 -z-10 rounded-full bg-ivory-100 shadow-md"
+                  className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-bronze-400 to-bronze-300 shadow-md"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
@@ -140,7 +140,7 @@ export function SplitExperience() {
               {activePanel === "shop" && (
                 <motion.div
                   layoutId="active-pill-bg"
-                  className="absolute inset-0 -z-10 rounded-full bg-gold-300 shadow-md"
+                  className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-gold-400 to-gold-300 shadow-md"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
@@ -240,7 +240,7 @@ export function SplitExperience() {
             <button
               onClick={() => switchPanel("shop")}
               data-cursor="link"
-              className="group relative flex items-center gap-3.5 overflow-hidden rounded-full border border-gold-400/40 bg-navy-900/95 p-2 pr-5 text-ivory-100 shadow-[0_12px_40px_rgba(0,0,0,0.55)] backdrop-blur-md transition-all duration-300 hover:border-gold-300 hover:bg-navy-800 hover:shadow-[0_12px_45px_rgba(201,168,118,0.28)]"
+              className="group relative flex items-center gap-3.5 overflow-hidden rounded-full border border-gold-400/40 bg-navy-900/95 p-2 pr-5 text-ivory-100 shadow-[0_12px_40px_rgba(0,0,0,0.65)] backdrop-blur-md transition-all duration-300 hover:border-gold-300 hover:bg-navy-800 hover:shadow-[0_12px_45px_rgba(212,154,85,0.28)]"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-gold-400 to-gold-300 text-navy-950 font-bold shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-6">
                 <ShoppingBag size={20} />
@@ -255,7 +255,7 @@ export function SplitExperience() {
                     className="text-gold-300 transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </div>
-                <p className="text-[11px] font-medium text-powder-300/90">
+                <p className="text-[11px] font-medium text-gold-300/80">
                   {t("split.view_amazon")}
                 </p>
               </div>
@@ -280,23 +280,23 @@ export function SplitExperience() {
             <button
               onClick={() => switchPanel("prep")}
               data-cursor="link"
-              className="group relative flex items-center gap-3.5 overflow-hidden rounded-full border border-powder-300/40 bg-navy-900/95 p-2 pl-5 text-ivory-100 shadow-[0_12px_40px_rgba(0,0,0,0.55)] backdrop-blur-md transition-all duration-300 hover:border-powder-300 hover:bg-navy-800"
+              className="group relative flex items-center gap-3.5 overflow-hidden rounded-full border border-bronze-400/40 bg-navy-900/95 p-2 pl-5 text-ivory-100 shadow-[0_12px_40px_rgba(0,0,0,0.65)] backdrop-blur-md transition-all duration-300 hover:border-bronze-300 hover:bg-navy-800 hover:shadow-[0_12px_45px_rgba(199,93,44,0.3)]"
             >
               <div className="text-right">
                 <div className="flex items-center justify-end gap-1.5">
                   <ArrowLeft
                     size={14}
-                    className="text-powder-300 transition-transform duration-300 group-hover:-translate-x-1"
+                    className="text-bronze-300 transition-transform duration-300 group-hover:-translate-x-1"
                   />
                   <span className="text-[13px] font-bold tracking-wide text-ivory-100">
                     {t("split.back_prep")}
                   </span>
                 </div>
-                <p className="text-[11px] font-medium text-powder-300/90">
+                <p className="text-[11px] font-medium text-bronze-300/80">
                   {t("split.back_prep_desc")}
                 </p>
               </div>
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-powder-300 text-navy-950 font-bold shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-bronze-500 to-bronze-300 text-navy-950 font-bold shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6">
                 <Boxes size={20} />
               </div>
             </button>

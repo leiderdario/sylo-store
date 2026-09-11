@@ -22,8 +22,8 @@ export default function ContactPage() {
       className="relative min-h-screen overflow-hidden bg-navy-950 pt-[calc(var(--nav-h)+48px)] pb-28 text-ivory-100"
     >
       {/* Luces ambientales / Glow tecnológico en fondo */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-powder-300/10 blur-[130px]" />
-      <div className="pointer-events-none absolute -right-32 top-60 h-[450px] w-[450px] rounded-full bg-gold-400/10 blur-[140px]" />
+      <div className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-bronze-500/15 blur-[140px]" />
+      <div className="pointer-events-none absolute -right-32 top-60 h-[450px] w-[450px] rounded-full bg-gold-400/15 blur-[150px]" />
 
       <div className="wrap relative z-10 max-w-[1240px]">
         {/* Encabezado editorial de alto impacto */}

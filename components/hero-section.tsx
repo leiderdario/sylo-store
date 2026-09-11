@@ -78,8 +78,9 @@ export function HeroSection() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/75 to-navy-950/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_45%,rgba(199,93,44,0.14),transparent_65%)]" />
         {showScene && <HeroScene />}
       </motion.div>
 
@@ -92,8 +93,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mb-4 text-[13px] font-bold uppercase tracking-[0.14em] text-gold-300"
+            className="mb-4 inline-flex items-center gap-2 font-mono text-[12px] font-bold uppercase tracking-[0.16em] text-bronze-300"
           >
+            <span className="h-1.5 w-1.5 rounded-full bg-bronze-400 shadow-[0_0_8px_rgba(219,110,57,0.8)]" />
             {t("hero.eyebrow")}
           </motion.p>
           <motion.h1
@@ -140,7 +142,7 @@ export function HeroSection() {
           <div className="flex flex-col items-end gap-1 border-r border-white/20 pr-4 text-right font-mono text-[11px] uppercase tracking-[0.12em] text-powder-200/80">
             <span>01 / RECEIVING</span>
             <span>INBOUND · VERIFIED</span>
-            <span className="text-gold-300">FBA READY</span>
+            <span className="font-bold text-bronze-400">FBA READY</span>
           </div>
         </motion.div>
       </div>

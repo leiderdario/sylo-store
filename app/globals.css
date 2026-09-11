@@ -1,19 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Paleta de marca Sylo (portada 1:1 desde la maqueta original) ---- */
-  --color-navy-950: #0a1830;
-  --color-navy-800: #1d3f6c;
-  --color-navy-700: #28517f;
-  --color-powder-300: #b0cfeb;
-  --color-powder-200: #d8e7f5;
+  /* ---- Paleta de marca Sylo: Miami Dark Petroleum & Sunset Bronze ---- */
+  --color-navy-950: #0b1117;
+  --color-navy-900: #101722;
+  --color-navy-800: #16202c;
+  --color-navy-700: #223042;
+  --color-powder-300: #df8555;
+  --color-powder-200: #e2ded5;
   --color-ivory-100: #f4f1e8;
   --color-ivory-50: #faf8f3;
-  --color-ink-900: #101826;
-  --color-gold-400: #c9a876;
-  --color-gold-300: #dac095;
-  --color-stone-400: #8b93a7;
-  --color-stone-600: #5b6478;
+  --color-ink-900: #0b1117;
+  --color-gold-400: #d49a55;
+  --color-gold-300: #e5b878;
+  --color-bronze-500: #c75d2c;
+  --color-bronze-400: #db6e39;
+  --color-bronze-300: #ea8a58;
+  --color-stone-400: #938c82;
+  --color-stone-600: #625c54;
 
   --font-serif: "Fraunces", Georgia, serif;
   --font-sans: "Manrope", system-ui, sans-serif;

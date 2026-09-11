@@ -40,10 +40,10 @@ export function ShopGrid() {
               key={pill.value}
               onClick={() => setFilter(pill.value)}
               className={cn(
-                "rounded-full border border-white/14 px-5 py-2 text-[13px] tracking-[0.02em] transition-colors",
+                "rounded-full border px-5 py-2 text-[13px] tracking-[0.02em] transition-all",
                 filter === pill.value
-                  ? "bg-ivory-100 text-navy-950 border-ivory-100"
-                  : "hover:bg-white/8"
+                  ? "bg-gradient-to-r from-gold-400 to-gold-300 text-navy-950 font-bold border-gold-400 shadow-md shadow-gold-400/20"
+                  : "border-white/14 hover:bg-white/8 hover:border-gold-400/40"
               )}
             >
               {pill.label}
@@ -75,10 +75,10 @@ export function ShopGrid() {
                 <button
                   onClick={() => setSelected(p)}
                   data-cursor="view"
-                  className="group relative block aspect-square w-full overflow-hidden bg-navy-800"
+                  className="group relative block aspect-square w-full overflow-hidden rounded-lg border border-white/10 bg-navy-900"
                 >
                   {p.note && (
-                    <span className="absolute left-3 top-3 z-10 bg-ivory-100 px-3 py-1.5 text-[11.5px] font-bold text-navy-950">
+                    <span className="absolute left-3 top-3 z-10 rounded-sm bg-gradient-to-r from-gold-400 to-gold-300 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-navy-950 shadow-md">
                       {p.note}
                     </span>
                   )}
@@ -89,7 +89,7 @@ export function ShopGrid() {
                     sizes="(min-width: 768px) 25vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                   />
-                  <span className="absolute inset-x-3 bottom-3 translate-y-16 bg-[rgba(244,241,232,0.96)] py-3 text-center text-[12.5px] font-bold uppercase tracking-[0.05em] text-navy-950 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <span className="absolute inset-x-3 bottom-3 translate-y-16 rounded-[2px] bg-[rgba(244,241,232,0.96)] py-3 text-center text-[12.5px] font-bold uppercase tracking-[0.05em] text-navy-950 opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     Quick view
                   </span>
                 </button>
@@ -106,7 +106,7 @@ export function ShopGrid() {
                         {formatPrice(p.listPrice)}
                       </span>
                     )}
-                    <span className="text-[15px] font-bold">
+                    <span className="text-[15px] font-bold text-gold-300">
                       {formatPrice(p.price)}
                     </span>
                   </div>
@@ -125,7 +125,7 @@ export function ShopGrid() {
       <Dialog open={!!selected} onOpenChange={(o) => !o && setSelected(null)}>
         {selected && (
           <DialogContent className="grid grid-cols-1 sm:grid-cols-2">
-            <div className="relative min-h-[220px] bg-navy-800 sm:min-h-[320px]">
+            <div className="relative min-h-[220px] bg-navy-900 sm:min-h-[320px]">
               <Image
                 src={selected.image}
                 alt={selected.name}
@@ -155,7 +155,7 @@ export function ShopGrid() {
                 target="_blank"
                 rel="noopener"
                 data-cursor="cart"
-                className="inline-flex items-center justify-center rounded-[2px] bg-navy-950 px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.06em] text-ivory-100 transition-colors hover:bg-navy-800"
+                className="inline-flex items-center justify-center rounded-[2px] bg-gradient-to-r from-gold-400 to-gold-300 px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.06em] text-navy-950 shadow-md transition-all hover:brightness-105"
               >
                 Comprar en Amazon
               </a>

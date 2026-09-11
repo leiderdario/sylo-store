@@ -33,8 +33,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${fraunces.variable} ${manrope.variable}`}>
+    <html
+      lang="es"
+      data-scroll-behavior="smooth"
+      className={`${fraunces.variable} ${manrope.variable}`}
+    >
       <body>
+
         <LanguageProvider>
           <SmoothScrollProvider>
             <a

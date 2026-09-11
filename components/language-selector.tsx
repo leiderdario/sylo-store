@@ -53,7 +53,7 @@ export function LanguageSelector() {
         className={cn(
           "group relative flex items-center gap-2 rounded-full border px-3 py-1.5 text-[13px] font-medium transition-all duration-300 backdrop-blur-md outline-none",
           isOpen
-            ? "border-gold-400 bg-navy-900 text-ivory-100 shadow-[0_0_20px_rgba(201,168,118,0.3)]"
+            ? "border-gold-400 bg-navy-900 text-ivory-100 shadow-[0_0_20px_rgba(212,154,85,0.28)]"
             : "border-white/15 bg-navy-900/60 text-ivory-100 hover:border-gold-400/50 hover:bg-navy-900/90 hover:shadow-lg"
         )}
       >

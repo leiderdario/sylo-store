@@ -88,13 +88,13 @@ export function SiteHeader() {
             ? "bg-transparent border-b border-transparent"
             : onLight
               ? "bg-[rgba(244,241,232,0.92)] backdrop-blur-md border-b border-[var(--line-on-light)] text-ink-900"
-              : "bg-[rgba(10,24,48,0.72)] backdrop-blur-md border-b border-[var(--line-on-dark)] text-ivory-100"
+              : "bg-[rgba(11,17,23,0.85)] backdrop-blur-md border-b border-[var(--line-on-dark)] text-ivory-100"
         )}
         style={{ color: atTop ? "var(--color-ivory-100)" : undefined }}
       >
         <div className="wrap flex h-full items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <span className="h-[34px] w-[34px] rounded-[6px] bg-gold-400" />
+            <span className="h-[34px] w-[34px] rounded-[6px] bg-gradient-to-tr from-bronze-500 via-gold-400 to-gold-300 shadow-[0_2px_10px_rgba(199,93,44,0.3)]" />
             <span className="font-serif text-[19px] tracking-[0.03em]">
               Sylo
             </span>
@@ -114,7 +114,12 @@ export function SiteHeader() {
                     );
                   }
                 }}
-                className="group relative py-1 text-[14px] tracking-[0.03em]"
+                className={cn(
+                  "group relative text-[14px] font-medium tracking-[0.02em] transition-opacity duration-200 hover:opacity-100",
+                  currentMatch === link.match
+                    ? "opacity-100 font-semibold"
+                    : "opacity-75"
+                )}
               >
                 {link.label}
                 <span
@@ -133,7 +138,7 @@ export function SiteHeader() {
 
             <Link
               href="/contacto"
-              className="hidden text-[13px] font-bold uppercase tracking-[0.06em] md:inline-flex md:items-center md:gap-2 md:rounded-full md:bg-ivory-100 md:px-5 md:py-2.5 md:text-navy-950 md:transition-all md:hover:bg-gold-400 md:hover:shadow-md"
+              className="hidden text-[13px] font-bold uppercase tracking-[0.06em] md:inline-flex md:items-center md:gap-2 md:rounded-full md:bg-ivory-100 md:px-5 md:py-2.5 md:text-navy-950 md:transition-all md:hover:bg-gradient-to-r md:hover:from-gold-400 md:hover:to-gold-300 md:hover:shadow-md"
             >
               {t("nav.quote")}
             </Link>
@@ -185,7 +190,7 @@ export function SiteHeader() {
             <Link
               href="/contacto"
               onClick={() => setOpen(false)}
-              className="mt-4 rounded-full bg-gold-400 px-7 py-3 font-serif text-[15px] font-bold text-navy-950"
+              className="mt-4 rounded-full bg-gradient-to-r from-gold-400 to-gold-300 px-7 py-3 font-serif text-[15px] font-bold text-navy-950 shadow-lg"
             >
               {t("nav.quote")}
             </Link>
@@ -195,4 +200,3 @@ export function SiteHeader() {
     </>
   );
 }
-

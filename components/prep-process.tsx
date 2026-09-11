@@ -125,7 +125,7 @@ export function PrepProcess() {
       <div className="wrap pt-28 pb-14">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-powder-300/20 bg-powder-300/10 px-3.5 py-1 text-[12px] font-bold uppercase tracking-[0.14em] text-powder-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-bronze-400/30 bg-bronze-500/10 px-3.5 py-1 text-[12px] font-bold uppercase tracking-[0.14em] text-bronze-300">
               <Boxes size={14} />
               <span>{t("process.badge")}</span>
             </div>
@@ -155,8 +155,8 @@ export function PrepProcess() {
       {/* Track alto: provee 500vh de scroll interactivo mientras el panel permanece sticky */}
       <div ref={trackRef} className="relative" style={{ height: "500vh" }}>
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          {/* Fondo sutil con líneas de velocidad al scrollear */}
-          <div className="pointer-events-none absolute inset-0 opacity-20 bg-[radial-gradient(#d8e7f5_1px,transparent_1px)] [background-size:28px_28px]" />
+          {/* Fondo sutil con líneas cálidas al scrollear */}
+          <div className="pointer-events-none absolute inset-0 opacity-15 bg-[radial-gradient(rgba(212,154,85,0.4)_1px,transparent_1px)] [background-size:28px_28px]" />
 
           <div className="wrap grid w-full items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] relative z-10">
             {/* Columna izquierda: etapas numeradas + línea de progreso + velocímetro HUD */}
@@ -169,8 +169,8 @@ export function PrepProcess() {
                       "flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-300",
                       isScrolling
                         ? scrollDirection === "down"
-                          ? "bg-gold-400 text-navy-950 shadow-md shadow-gold-400/20"
-                          : "bg-powder-300 text-navy-950"
+                          ? "bg-gradient-to-tr from-bronze-500 to-bronze-400 text-ivory-100 shadow-md shadow-bronze-500/25"
+                          : "bg-gold-400 text-navy-950"
                         : "bg-white/10 text-stone-400"
                     )}
                   >
@@ -214,7 +214,7 @@ export function PrepProcess() {
                 <div className="relative w-1 shrink-0 self-stretch rounded-full bg-white/10 overflow-hidden">
                   <div
                     ref={fillRef}
-                    className="absolute left-0 top-0 h-full w-full origin-top bg-gradient-to-b from-powder-300 via-gold-400 to-gold-300 shadow-[0_0_12px_rgba(201,168,118,0.6)]"
+                    className="absolute left-0 top-0 h-full w-full origin-top bg-gradient-to-b from-bronze-500 via-bronze-400 to-gold-300 shadow-[0_0_14px_rgba(219,110,57,0.6)]"
                     style={{ transform: "scaleY(0)" }}
                   />
                 </div>
@@ -309,20 +309,20 @@ export function PrepProcess() {
                       sizes="(min-width: 768px) 55vw, 90vw"
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/30 to-transparent" />
                   </motion.div>
                 </AnimatePresence>
 
                 {/* Badge de fase y título activo */}
-                <div className="absolute left-6 top-6 z-20 flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/85 px-4 py-2 text-[12px] font-bold text-ivory-100 shadow-xl backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-gold-400 animate-pulse" />
+                <div className="absolute left-6 top-6 z-20 flex items-center gap-2 rounded-full border border-white/15 bg-navy-950/90 px-4 py-2 text-[12px] font-bold text-ivory-100 shadow-xl backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-bronze-400 shadow-[0_0_8px_rgba(219,110,57,0.8)] animate-pulse" />
                   <span>
                     Fase {stage.index} &mdash; {t(`stage.${stage.index}.title`)}
                   </span>
                 </div>
 
                 {/* Holograma esquemático / Caja 3D con rotación en tiempo real según el scroll */}
-                <div className="absolute right-6 top-6 z-20 hidden sm:flex items-center gap-2.5 rounded-full border border-gold-400/30 bg-navy-950/90 px-4 py-2 text-[11px] font-mono text-gold-300 shadow-xl backdrop-blur-md">
+                <div className="absolute right-6 top-6 z-20 hidden sm:flex items-center gap-2.5 rounded-full border border-bronze-400/30 bg-navy-950/90 px-4 py-2 text-[11px] font-mono text-bronze-300 shadow-xl backdrop-blur-md">
                   <RotateCw
                     size={14}
                     style={{
@@ -335,7 +335,7 @@ export function PrepProcess() {
 
                 {/* Tag de la etapa */}
                 <div className="absolute bottom-6 left-6 z-20 max-w-[70%]">
-                  <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-gold-300">
+                  <span className="text-[11px] font-mono uppercase tracking-[0.16em] text-bronze-300">
                     {t("process.sop")}
                   </span>
                   <p className="mt-1 text-[16px] font-serif text-ivory-100 line-clamp-1">
@@ -344,7 +344,7 @@ export function PrepProcess() {
                 </div>
 
 
-                <div className="absolute bottom-6 right-6 z-20 font-mono text-[11.5px] uppercase tracking-[0.14em] text-powder-300 bg-white/10 px-3 py-1.5 rounded-md backdrop-blur-sm">
+                <div className="absolute bottom-6 right-6 z-20 font-mono text-[11.5px] uppercase tracking-[0.14em] text-bronze-300 bg-navy-950/80 border border-bronze-400/20 px-3 py-1.5 rounded-md backdrop-blur-sm">
                   {stage.tag}
                 </div>
 
@@ -358,7 +358,7 @@ export function PrepProcess() {
                       duration: 1.4,
                       ease: "linear",
                     }}
-                    className="pointer-events-none absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-gold-400/70 to-transparent shadow-[0_0_15px_rgba(201,168,118,0.8)] z-10"
+                    className="pointer-events-none absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-bronze-400/80 to-transparent shadow-[0_0_15px_rgba(219,110,57,0.8)] z-10"
                   />
                 )}
               </div>

@@ -9,7 +9,7 @@ export function InstagramStrip() {
           href="https://www.instagram.com/sylobeautydeals"
           target="_blank"
           rel="noopener"
-          className="mt-3 inline-flex items-center gap-2 text-[15px] text-powder-300"
+          className="mt-3 inline-flex items-center gap-2 text-[15px] font-medium text-bronze-300 transition-colors hover:text-gold-300"
         >
           @sylobeautydeals on Instagram
         </a>
